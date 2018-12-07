@@ -1,8 +1,11 @@
 
 # Scatterplot
 # https://ggplot2.tidyverse.org/reference/geom_point.html
-g <- ggplot(data = irri_yes, aes(x = yield, y = conc, color = "Irrigation"))
+
+g <- ggplot(data = Ex1, aes(x = yield, y = conc, 
+                                 color = "Irrigation"))
 summary(g)
+
 # plot
 g + geom_point()
 
