@@ -23,6 +23,7 @@ irri_no <- subset(Ex1, irrigation == "no")
 
 #plot(x,y) # X-Y plotting
 #Example1: Simple scatter plot
+
 qplot(x = yield, y = conc, data = irri_yes,
       xlab = "Concentration", 
       ylab = "Yield",
