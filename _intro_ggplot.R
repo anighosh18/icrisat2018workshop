@@ -78,14 +78,16 @@ p <- ggplot(data = Ex1, aes(x = yield, y = conc)) +
   geom_smooth(size = 2, linetype = 2, 
               method = "lm", se = FALSE) +
   theme_bw(base_family = "Times") +
-  coord_cartesian(ylim=c(0,1)) # or use jut ylim = c(0,1)
+  coord_cartesian(ylim=c(0,1)) # or use just ylim = c(0,1)
 p
 
 
-# Control legend: TODO
+# Control legend
 p <- ggplot(data = Ex1, aes(x = yield, y = conc)) + 
   geom_point(aes(color = irrigation,
                  size = 4, alpha = 2/3, show.legend = FALSE)) + 
   geom_smooth(size = 2, linetype = 2, method = "lm", se = FALSE) +
-  show.legend()
+  
+  guides(color=guide_legend("Irrigation"), 
+                    size = FALSE, shape = FALSE, alpha = FALSE)
 p
