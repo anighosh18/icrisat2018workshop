@@ -1,4 +1,5 @@
 library(ggplot2)
+library(ggrepel)
 
 Ex1 <- read.csv("./Data/R Graphics.csv")
 irri_yes <- subset(Ex1, irrigation == "yes")
@@ -6,6 +7,7 @@ irri_no <- subset(Ex1, irrigation == "no")
 
 # Resources
 # Cheatsheet: https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf
+# https://tutorials.iq.harvard.edu/R/Rgraphics/Rgraphics.html
 # 
 
 # Grammar of Graphics: Independently control/design building blocks and then combine them 
