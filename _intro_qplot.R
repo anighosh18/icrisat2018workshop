@@ -75,10 +75,11 @@ p <- qplot(x = yield, y = conc, data = irri_yes,
            ylab = "Yield",
            main = "Yield Vs Concentration")
 
+
 # Axis labels and title
-p + theme(axis.title=element_text(face="bold.italic", 
-                                  size="12", color="brown"),
-          plot.title = element_text(hjust = 0.5))
+p + theme(axis.title = element_text(face="bold.italic", 
+                                  size="18", color="brown"),
+          plot.title = element_text(hjust = 0.5, size = "24"))
 
 # Symbols, sizes and colors of the plots
 # Step 1
@@ -91,28 +92,30 @@ p +
 # Step 2
 p 
 
-aes_p <- aes(shape = 21, color = "blue", size = 4, alpha = 2/3)
+aes_p <- aes(shape = 16, color = "blue", size = 4, alpha = 2/3)
 
 th_p <-  theme(axis.title = element_text(face="bold.italic", 
-                                  size="12", color="brown"),
-        plot.title = element_text(hjust = 0.5))
+                                  size="18", color="brown"),
+        plot.title = element_text(hjust = 0.5, size = 24))
 
 p + aes_p + th_p + scale_shape_identity() # scale_shape_identity is needed for integer variables
 
 
 # Turning off the legends for some of the aesthetics
 
-p_guide <- guides(color=FALSE, size = FALSE, shape = FALSE, alpha = FALSE)
+p_guide <- guides(color=FALSE, size = FALSE,
+                  shape = FALSE, alpha = FALSE)
 
 # Without any legend
 p + aes_p + th_p + p_guide + scale_shape_identity()
 
 # add a custom text and legend
-p_labs <- labs(title="Yield Vs Conc", y="Conc", x="Yield", caption="IRRI")
+p_labs <- labs(caption="IRRI")
 
-p_guide <- guides(color=guide_legend("irrigation"), size = FALSE, shape = FALSE, alpha = FALSE)
+p_guide <- guides(color=guide_legend("Irrigation"), 
+                  size = FALSE, shape = FALSE, alpha = FALSE)
 
 p + aes_p + th_p + p_guide + p_labs + scale_shape_identity()
 
 # Finding help
-help.search("geom_point", package = "ggplot2")
+help.search("geom_", package = "ggplot2")
