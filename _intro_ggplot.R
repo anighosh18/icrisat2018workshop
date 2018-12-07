@@ -2,7 +2,7 @@
 # Scatterplot
 # https://ggplot2.tidyverse.org/reference/geom_point.html
 
-g <- ggplot(data = Ex1, aes(x = yield, y = conc))
+g <- ggplot(Ex1, aes(x = yield, y = conc, color = irrigation))
 g
 summary(g)
 
