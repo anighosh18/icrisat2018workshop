@@ -19,6 +19,9 @@ g +
   scale_shape_identity() +
   geom_text(aes(label=conc), size = 3)
 
+# Place the texts in nicer position
+
+
 # Create legend for everything in the aesthetics
 g +
   geom_point(aes(size = color = "blue", size = 4, alpha = 2/3)) +
