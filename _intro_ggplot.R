@@ -1,7 +1,7 @@
 
 # Scatterplot
 # https://ggplot2.tidyverse.org/reference/geom_point.html
-g <- ggplot(data = irri_yes, aes(x = yield, y = conc))
+g <- ggplot(data = irri_yes, aes(x = yield, y = conc, color = "Irrigation"))
 summary(g)
 # plot
 g + geom_point()
@@ -34,16 +34,14 @@ g +
   labs(color="blue", size = "Density")
 
 # Add custom color
-# Try 
-scale_x_continuous(name = "Yield") +
+# Try scale_ +tab
+
+g + 
+  geom_point() +
+  scale_x_continuous(name = "Yield") +
   scale_y_continuous(name = "Concentration") +
-  scale_color_manual(name = "Region of the world",
-                     values = c("#24576D",
-                                "#099DD7",
-                                "#28AADC",
-                                "#248E84",
-                                "#F2583F",
-                                "#96503F"))
+  scale_color_manual(name = "Legend",
+                     values = c("blue"))
 
 
 # Adding a smooth loess line
