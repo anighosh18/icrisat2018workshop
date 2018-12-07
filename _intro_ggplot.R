@@ -21,12 +21,30 @@ g +
 
 # Place the texts in nicer position
 
+g +
+  geom_point(aes(color = "blue", size = 4, alpha = 2/3, shape = 16)) +
+  labs(title="Yield Vs Conc", y="Conc", x="Yield", caption="IRRI") +
+  scale_shape_identity() +
+  geom_text_repel(aes(label=conc), size = 3)
 
 # Create legend for everything in the aesthetics
 g +
   geom_point(aes(size = color = "blue", size = 4, alpha = 2/3)) +
   labs(title="Yield Vs Conc", y="Conc", x="Yield", caption="IRRI") +
   labs(color="blue", size = "Density")
+
+# Add custom color
+# Try 
+scale_x_continuous(name = "Yield") +
+  scale_y_continuous(name = "Concentration") +
+  scale_color_manual(name = "Region of the world",
+                     values = c("#24576D",
+                                "#099DD7",
+                                "#28AADC",
+                                "#248E84",
+                                "#F2583F",
+                                "#96503F"))
+
 
 # Adding a smooth loess line
 p <- g + geom_point() + geom_smooth()
