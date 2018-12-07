@@ -16,19 +16,25 @@ g +
   scale_shape_identity()
 
 # Add text to the points
-g +
-  geom_point(aes(color = "blue", size = 4, alpha = 2/3, shape = 16)) +
-  labs(title="Yield Vs Conc", y="Conc", x="Yield", caption="IRRI") +
-  scale_shape_identity() +
-  geom_text(aes(label=conc), size = 3)
+
+g_pt <- geom_point(aes(color = "blue", size = 4, 
+                       alpha = 2/3, shape = 16))
+
+g_lab <- labs(title="Yield Vs Conc", y="Conc", x="Yield", 
+              caption="IRRI")
+
+g_text <- geom_text(aes(label=conc), size = 3)
+
+g + g_pt + g_lab + g_text + scale_shape_identity()
+  
 
 # Place the texts in nicer position
 
-g +
-  geom_point(aes(color = "blue", size = 4, alpha = 2/3, shape = 16)) +
-  labs(title="Yield Vs Conc", y="Conc", x="Yield", caption="IRRI") +
-  scale_shape_identity() +
-  geom_text_repel(aes(label=conc), size = 3)
+
+g_text <- geom_text_repel(aes(label=conc), size = 3)
+
+g + g_pt + g_lab + g_text + scale_shape_identity()
+  
 
 # Create legend for everything in the aesthetics
 g +
