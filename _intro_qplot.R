@@ -29,6 +29,7 @@ qplot(x = yield, y = conc, data = irri_yes,
       ylab = "Yield",
       main = "Yield Vs Concentration")
 
+
 qplot(x = yield, y = conc, data = irri_yes,
       xlab = "Concentration", 
       ylab = "Yield",
